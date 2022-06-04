@@ -1,0 +1,22 @@
+.library {
+    display: flex;
+    flex-wrap: wrap;
+
+    /* Temporary for visualization */
+    background-color: rgb(176, 231, 104);
+    width: 80%;
+    height: auto;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+
+    /* Temporary for visualization */
+    background-color: grey;
+    width: 30%;
+    height: 40%;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
