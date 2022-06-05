@@ -1,11 +1,26 @@
+body {
+    display: flex;
+    justify-content: space-between;
+}
+
 .library {
+    flex: 3;
+
     display: flex;
     flex-wrap: wrap;
 
     /* Temporary for visualization */
     background-color: rgb(176, 231, 104);
-    width: 80%;
-    height: auto;
+}
+
+.book-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* Temporary for visualization */
+    background-color: grey;
 }
 
 .book {
@@ -14,8 +29,6 @@
 
     /* Temporary for visualization */
     background-color: grey;
-    width: 30%;
-    height: 40%;
     margin: 20px;
     border-radius: 10px;
     padding: 10px;

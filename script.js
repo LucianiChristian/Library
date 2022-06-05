@@ -1,20 +1,23 @@
+// Array for holding book objects, the "library"
 const myLibrary = [];
 
 // Added books for testing display
 addBook(new Book('Against The Day', 'Thomas Pynchon', 1000));
 addBook(new Book('100 Years Of Solitude', 'Gabriel Garcia Marquez', 400));
 
-
+// Book constructor function
 function Book(title, author, pages) {
     this.title = title;
     this.author = author;
     this.pages = pages;
 }
 
+// Adds a single book object to the "library"
 function addBook(book) {
     myLibrary.push(book);
 }
 
+// Displays the current library contents to the page
 const libraryContainer = document.querySelector('.library');
 function displayLibrary(){
     for(let index in myLibrary) {
@@ -59,7 +62,7 @@ function displayLibrary(){
     }
 }
 
-// initial page display
+// Called here to display the default library when the page opens
 displayLibrary();
 
 
