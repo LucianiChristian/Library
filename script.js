@@ -1,10 +1,6 @@
 // Array for holding book objects, the "library"
 const myLibrary = [];
 
-// Added books for testing display
-addBook(new Book('Against The Day', 'Thomas Pynchon', 1000));
-addBook(new Book('100 Years Of Solitude', 'Gabriel Garcia Marquez', 400));
-
 // Book constructor function
 function Book(title, author, pages) {
     this.title = title;
@@ -12,14 +8,34 @@ function Book(title, author, pages) {
     this.pages = pages;
 }
 
+// Added books for testing display
+addBook(new Book('Against The Day', 'Thomas Pynchon', 1000));
+addBook(new Book('100 Years Of Solitude', 'Gabriel Garcia Marquez', 400));
+
 // Adds a single book object to the "library"
 function addBook(book) {
     myLibrary.push(book);
 }
 
+// Creates a single book object from the form data
+function createBookFromForm() {
+    let title = document.querySelector('.title-field').value;
+    let author = document.querySelector('.author-field').value;
+    let pages = document.querySelector('.pages-field').value;
+
+    return {title, author, pages};
+}
+
+// Adds a single book object from the form data
+function addBookFromForm() {
+    addBook(createBookFromForm());
+    displayLibrary();
+}
+
 // Displays the current library contents to the page
 const libraryContainer = document.querySelector('.library');
 function displayLibrary(){
+    libraryContainer.innerHTML = '';
     for(let index in myLibrary) {
         // Stores the current book object, to minimize syntax
         const currentBook = myLibrary[index];
@@ -64,5 +80,9 @@ function displayLibrary(){
 
 // Called here to display the default library when the page opens
 displayLibrary();
+
+// Event listener for submit button
+const submitButton = document.querySelector('.submit-button');
+submitButton.addEventListener('click', addBookFromForm);
 
 
