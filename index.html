@@ -11,12 +11,12 @@
 <body>
     <div class="library">      
     </div>
-    <form action="" class="book-form">
+    <form class="book-form" action="javascript:addBookFromForm()">
         <h1>Add new book</h1>
-        <input type="text" class="title-field" placeholder="Title">
-        <input type="text" class="author-field" placeholder="Author">
-        <input type="text" class="pages-field" placeholder="Pages">
-        <button type="button" class="submit-button">Submit</button>
+        <input type="text" class="title-field" placeholder="Title" required>
+        <input type="text" class="author-field" placeholder="Author" required>
+        <input type="number" class="pages-field" placeholder="Pages" required>
+        <button type="submit" class="submit-button">Submit</button>
     </form>
 </body>
 </html>

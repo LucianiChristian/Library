@@ -26,9 +26,20 @@ function createBookFromForm() {
     return {title, author, pages};
 }
 
+const submitButton = document.querySelector('.submit-button');
+const title = document.querySelector('.title-field');
+const author = document.querySelector('.author-field');
+const pages = document.querySelector('.pages-field');
+function clearForm() {
+    title.value = '';
+    author.value = '';
+    pages.value = '';
+}
+
 // Adds a single book object from the form data
 function addBookFromForm() {
     addBook(createBookFromForm());
+    clearForm();
     displayLibrary();
 }
 
@@ -81,8 +92,6 @@ function displayLibrary(){
 // Called here to display the default library when the page opens
 displayLibrary();
 
-// Event listener for submit button
-const submitButton = document.querySelector('.submit-button');
-submitButton.addEventListener('click', addBookFromForm);
+
 
 
