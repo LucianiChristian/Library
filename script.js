@@ -9,6 +9,13 @@ function Book(title, author, pages, readStatus) {
     this.readStatus = readStatus;
 }
 
+// Inverts the current readStatus value on a given book
+Book.prototype.changeReadStatus = function() {
+    this.readStatus = !this.readStatus;
+    displayLibrary();
+};
+
+
 // Added books for testing display
 addBook(new Book('Against The Day', 'Thomas Pynchon', 1000, false));
 addBook(new Book('100 Years Of Solitude', 'Gabriel Garcia Marquez', 400, false));
@@ -72,8 +79,6 @@ function addBookCard(currentBook, index) {
         const bookCard = document.createElement('div');
         bookCard.classList.add('book');
         bookCard.dataset.index = index;
-        // Add data attribute
-
 
         // Add the card div to library container
         libraryContainer.appendChild(bookCard);
@@ -107,6 +112,19 @@ function addBookCard(currentBook, index) {
         bookCard.appendChild(bookPages);
         bookCard.appendChild(readButton);
         bookCard.appendChild(deleteButton);
+
+        // Add the 'read' class if readStatus = true
+        if(currentBook.readStatus === true) {
+            bookCard.classList.add('read');
+        }
+        else {
+            bookCard.classList.remove('read');
+        }
+
+        // To fire changeReadStatus() when read button is clicked
+        readButton.addEventListener('click', function() {
+            currentBook.changeReadStatus();
+        });
 
         // To fire removeBook() when delete button is clicked
         deleteButton.addEventListener('click', function() {
