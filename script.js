@@ -2,15 +2,16 @@
 let myLibrary = [];
 
 // Book constructor function
-function Book(title, author, pages) {
+function Book(title, author, pages, readStatus) {
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.readStatus = readStatus;
 }
 
 // Added books for testing display
-addBook(new Book('Against The Day', 'Thomas Pynchon', 1000));
-addBook(new Book('100 Years Of Solitude', 'Gabriel Garcia Marquez', 400));
+addBook(new Book('Against The Day', 'Thomas Pynchon', 1000, false));
+addBook(new Book('100 Years Of Solitude', 'Gabriel Garcia Marquez', 400, false));
 
 
 
@@ -33,7 +34,7 @@ function addBookFromForm() {
         let author = document.querySelector('.author-field').value;
         let pages = document.querySelector('.pages-field').value;
 
-        return {title, author, pages};
+        return new Book(title, author, pages, false);
     }
 
     // Clears all values from the form controls. Used within createBookFromForm().
@@ -47,9 +48,7 @@ function addBookFromForm() {
         pages.value = '';
     }
 
-// Removes a single book object from the myLibrary array.
-// Updates the library display to reflect the change
-
+// Removes a single book object from the myLibrary array. Updates the library display to reflect the change.
 function removeBook(currentBookCard) {
     myLibrary = myLibrary.filter(book => book !== myLibrary[currentBookCard.dataset.index]);
     displayLibrary();
