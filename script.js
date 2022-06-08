@@ -84,35 +84,39 @@ function addBookCard(currentBook, index) {
         libraryContainer.appendChild(bookCard);
 
         // Create details of the card div
-        const bookTitle = document.createElement('p');
+        const topDiv = document.createElement('div');
+        topDiv.classList.add('top-div');
+
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete-button');
+        deleteButton.setAttribute('type', 'button');
+        deleteButton.textContent = 'x';
+
+        const bookTitle = document.createElement('h3');
         bookTitle.classList.add('book-title');
         bookTitle.textContent = currentBook.title;
 
         const bookAuthor = document.createElement('p');
         bookAuthor.classList.add('book-author');
-        bookAuthor.textContent = currentBook.author;
+        bookAuthor.textContent = 'Author : ' + currentBook.author;
 
         const bookPages = document.createElement('p');
         bookPages.classList.add('book-pages');
-        bookPages.textContent = currentBook.pages;
+        bookPages.textContent = currentBook.pages + ' pages';
 
         const readButton = document.createElement('button');
         readButton.classList.add('read-button');
         readButton.setAttribute('type', 'button');
         readButton.textContent = 'Read';
 
-        const deleteButton = document.createElement('button');
-        deleteButton.classList.add('delete-button');
-        deleteButton.setAttribute('type', 'button');
-        deleteButton.textContent = 'Delete';
-
         // Add the card div deatils to the card
-        bookCard.appendChild(bookTitle);
+        bookCard.appendChild(topDiv);
+        topDiv.appendChild(bookTitle);
+        topDiv.appendChild(deleteButton);
         bookCard.appendChild(bookAuthor);
         bookCard.appendChild(bookPages);
         bookCard.appendChild(readButton);
-        bookCard.appendChild(deleteButton);
-
+        
         // Add the 'read' class if readStatus = true
         if(currentBook.readStatus === true) {
             bookCard.classList.add('read');

@@ -19,6 +19,8 @@ header {
     align-items: center;
 
     padding: 4px 20px;
+
+    background-color: grey;
 }
 
 .library {
@@ -26,32 +28,73 @@ header {
 
     display: flex;
     flex-wrap: wrap;
-
-    /* Temporary for visualization */
-    background-color: rgb(176, 231, 104);
 }
 
 .book-form {
     flex: 1;
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
-
-    /* Temporary for visualization */
-    background-color: grey;
 }
 
 .book {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+
+    width: 35%;
+    height: 25%;
 
     /* Temporary for visualization */
     background-color: grey;
     margin: 20px;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 5px;
+    padding: 20px;
+}
+    .book .top-div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .book .delete-button {
+        font-size: 20px;
+
+        border: none;
+        background-color: rgba(128, 128, 128, 0);
+        
+        cursor: pointer;
+    }
+
+.add-book {
+    position: fixed;
+    right: 20px;
+    bottom: 60px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+
+    font-size: 36px;
+
+    background-color: grey;
+    color: white;
+
+    cursor: pointer;
+}
+
+footer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    padding: 4px 0px;
+
+    background-color: grey;
 }
 
 .read {
-    background-color: green;    
+    background-color: green;
+    color: white;    
 }
