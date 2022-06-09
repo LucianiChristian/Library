@@ -18,9 +18,7 @@
     </header>
     <div class="library">      
     </div>
-    <button class="add-book">
-        +
-    </button>
+    <button class="add-book" id="open">+</button>
 
     <footer>
         <p>Developed By Christian L.</p>
@@ -28,12 +26,14 @@
             <img src="images/GitHub-Mark-Light-32px.png" alt="GitHub Logo">
         </a>
     </footer>
-    <form class="book-form" action="javascript:addBookFromForm()">
-        <h1>Add new book</h1>
-        <input type="text" class="title-field" placeholder="Title" required>
-        <input type="text" class="author-field" placeholder="Author" required>
-        <input type="number" class="pages-field" placeholder="Pages" required>
-        <button type="submit" class="submit-button">Submit</button>
-    </form>
+    <div class="modal-container" id="modal-container">
+        <form class="modal" action="javascript:addBookFromForm()">
+            <h1>Add new book</h1>
+            <p><input type="text" class="title-field" placeholder="Title" required></p>
+            <p><input type="text" class="author-field" placeholder="Author" required></p>
+            <p><input type="number" class="pages-field" placeholder="Pages" required></p>
+            <button type="submit" id="close">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

@@ -28,6 +28,7 @@ function addBookFromForm() {
     addBook(createBookFromForm());
     clearForm();
     displayLibrary();
+    closeModal();
 }
 
     // Adds a single book object to the "library". Used within createBookFromForm().
@@ -135,6 +136,20 @@ function addBookCard(currentBook, index) {
             removeBook(bookCard);
         })
 }
+
+// Modal Handling
+const open = document.getElementById('open');
+const modalContainer = document.getElementById('modal-container');
+const close = document.getElementById('close');
+
+open.addEventListener('click', () => {
+    modalContainer.classList.add('show');
+});
+
+function closeModal() {
+    modalContainer.classList.remove('show');
+}
+
 
 // Called here to display the default library when the page opens
 displayLibrary();
