@@ -109,6 +109,9 @@ function addBookCard(currentBook, index) {
         readLabel.classList.add('switch');
         const readInput = document.createElement('input');
         readInput.setAttribute('type', 'checkbox');
+        if(currentBook.readStatus === true) {
+            readInput.checked = true;
+        }
         const readSpan = document.createElement('span');
         readSpan.classList.add('slider');
 
@@ -129,7 +132,7 @@ function addBookCard(currentBook, index) {
         else {
             bookCard.classList.remove('read');
         }
-
+        
         // To fire changeReadStatus() when read button is clicked
         readInput.addEventListener('click', function() {
             currentBook.changeReadStatus();
@@ -139,6 +142,10 @@ function addBookCard(currentBook, index) {
         deleteButton.addEventListener('click', function() {
             removeBook(bookCard);
         })
+}
+
+function setReadStatus(index) {
+    myLibrary[index].changeReadStatus();
 }
 
 // Modal Handling
