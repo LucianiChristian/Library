@@ -18,9 +18,7 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    padding: 4px 20px;
-
-    background-color: grey;
+    padding: 10px 40px;
 }
     header .progress-container {
         display: flex;
@@ -71,7 +69,12 @@ header {
         background-color: rgba(128, 128, 128, 0);
         
         cursor: pointer;
+
+        position: relative;
+        bottom: 10px;
+        left: 5px;
     }
+    
 
 .add-book {
     position: fixed;
