@@ -30,11 +30,12 @@
     
     <div class="modal-container" id="modal-container">
         <form class="modal" action="javascript:addBookFromForm()">
+            <span id="close-modal">x</span>
             <h1>Add new book</h1>
-            <p><input type="text" class="title-field" placeholder="Title" required></p>
+            <p><input type="text" class="title-field" placeholder="Title" maxLength='30' required></p>
             <p><input type="text" class="author-field" placeholder="Author" required></p>
             <p><input type="number" class="pages-field" placeholder="Pages" required></p>
-            <button type="submit" id="close">Submit</button>
+            <button type="submit" id="submit">Submit</button>
         </form>
     </div>
 </body>

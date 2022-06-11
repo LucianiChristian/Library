@@ -30,7 +30,7 @@ Book.prototype.changeReadStatus = function() {
 
 
 // Added books for testing display
-addBook(new Book('Against The Day', 'Thomas Pynchon', 1000, false));
+addBook(new Book('Against The Day', 'Thomas Pynchon', 1000, true));
 addBook(new Book('100 Years Of Solitude', 'Gabriel Garcia Marquez', 400, false));
 
 
@@ -162,10 +162,15 @@ function addBookCard(currentBook, index) {
 // Modal Handling
 const open = document.getElementById('open');
 const modalContainer = document.getElementById('modal-container');
-const close = document.getElementById('close');
+const submit = document.getElementById('submit');
+const close = document.getElementById('close-modal');
 
 open.addEventListener('click', () => {
     modalContainer.classList.add('show');
+});
+
+close.addEventListener('click', () => {
+    closeModal();
 });
 
 function closeModal() {
