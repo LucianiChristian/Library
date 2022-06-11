@@ -105,10 +105,12 @@ function addBookCard(currentBook, index) {
         bookPages.classList.add('book-pages');
         bookPages.textContent = currentBook.pages + ' pages';
 
-        const readButton = document.createElement('button');
-        readButton.classList.add('read-button');
-        readButton.setAttribute('type', 'button');
-        readButton.textContent = 'Read';
+        const readLabel = document.createElement('label');
+        readLabel.classList.add('switch');
+        const readInput = document.createElement('input');
+        readInput.setAttribute('type', 'checkbox');
+        const readSpan = document.createElement('span');
+        readSpan.classList.add('slider');
 
         // Add the card div deatils to the card
         bookCard.appendChild(topDiv);
@@ -116,7 +118,9 @@ function addBookCard(currentBook, index) {
         topDiv.appendChild(deleteButton);
         bookCard.appendChild(bookAuthor);
         bookCard.appendChild(bookPages);
-        bookCard.appendChild(readButton);
+        bookCard.appendChild(readLabel);
+        readLabel.appendChild(readInput);
+        readLabel.appendChild(readSpan);
         
         // Add the 'read' class if readStatus = true
         if(currentBook.readStatus === true) {
@@ -127,7 +131,7 @@ function addBookCard(currentBook, index) {
         }
 
         // To fire changeReadStatus() when read button is clicked
-        readButton.addEventListener('click', function() {
+        readInput.addEventListener('click', function() {
             currentBook.changeReadStatus();
         });
 
