@@ -1,6 +1,19 @@
 // Array for holding book objects, the "library"
 let myLibrary = [];
 
+// Calculates the ratio of read books for use in the progress meter
+function readRatio() {
+    let readCount = 0;
+
+    for(let index in myLibrary) {
+        if(myLibrary[index].readStatus === true) {
+            readCount++;
+        }
+    }
+
+    return (readCount / myLibrary.length) * 100;
+}
+
 // Book constructor function
 function Book(title, author, pages, readStatus) {
     this.title = title;
@@ -63,15 +76,17 @@ function removeBook(currentBookCard) {
 }
 
 // Displays the current library contents to the page
+const progressBar = document.getElementById('progress-bar');
 const libraryContainer = document.querySelector('.library');
 function displayLibrary(){
     libraryContainer.innerHTML = '';
     for(let index in myLibrary) {
         // Stores the current book object, to minimize syntax
         const currentBook = myLibrary[index];
-
         addBookCard(currentBook, index);
     }
+
+    progressBar.value = readRatio();
 }
 
 // Creates a full book card and appends it to the library container
@@ -142,10 +157,6 @@ function addBookCard(currentBook, index) {
         deleteButton.addEventListener('click', function() {
             removeBook(bookCard);
         })
-}
-
-function setReadStatus(index) {
-    myLibrary[index].changeReadStatus();
 }
 
 // Modal Handling

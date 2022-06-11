@@ -28,9 +28,8 @@ header {
         flex-direction: column;
     }
 
-    header progress {
-        width: 180px;
-        height: 20px;
+    header meter {
+        width: 106px;
     }
 
 .library {
