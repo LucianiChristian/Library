@@ -1,6 +1,14 @@
 // Array for holding book objects, the "library"
 let myLibrary = [];
 
+// Book constructor function
+function Book(title, author, pages, readStatus) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.readStatus = readStatus;
+}
+
 // Calculates the ratio of read books for use in the progress meter
 function readRatio() {
     let readCount = 0;
@@ -14,26 +22,11 @@ function readRatio() {
     return (readCount / myLibrary.length) * 100;
 }
 
-// Book constructor function
-function Book(title, author, pages, readStatus) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.readStatus = readStatus;
-}
-
 // Inverts the current readStatus value on a given book
 Book.prototype.changeReadStatus = function() {
     this.readStatus = !this.readStatus;
     displayLibrary();
 };
-
-
-// Added books for testing display
-addBook(new Book('Against The Day', 'Thomas Pynchon', 1000, true));
-addBook(new Book('100 Years Of Solitude', 'Gabriel Garcia Marquez', 400, false));
-
-
 
 // Adds a single book object from the form data.
 // Updates the library display to reflect the change.
@@ -187,6 +180,10 @@ function closeModal() {
     modalContainer.classList.remove('show');
 }
 
+
+// Added books for testing display
+addBook(new Book('Against The Day', 'Thomas Pynchon', 1000, true));
+addBook(new Book('100 Years Of Solitude', 'Gabriel Garcia Marquez', 400, false));
 
 // Called here to display the default library when the page opens
 displayLibrary();
