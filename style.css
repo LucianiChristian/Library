@@ -27,7 +27,6 @@ header {
         display: flex;
         flex-direction: column;
     }
-
     header meter {
         width: 106px;
     }
@@ -57,7 +56,7 @@ header {
     transition: transform .2s;
 
 
-    background-color: grey;
+    background: linear-gradient(46deg, grey, #fbfbfbad);
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -175,7 +174,7 @@ footer {
     }
 
 .read {
-    background-color: green;
+    background: linear-gradient(46deg, rgb(10 151 22), #fbfbfb8f);
     color: white;    
 }
 
@@ -190,7 +189,7 @@ footer {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     transition: opactiy 0.3s ease;
 }
     .modal-container.show {
@@ -200,8 +199,8 @@ footer {
 
 .modal {
     background-color: grey;
-    width: 350px;
-    height: 370px;
+    width: 310px;
+    height: 350px;
     max-width: 100%;
     padding: 50px;
     border-radius: 5px;
@@ -236,7 +235,7 @@ footer {
         border: none;
         padding: 10px;
         width: 55%;
-        background-color: rgb(104, 184, 104);
+        background-color: rgb(10 151 22);
         color: white;
         font-size: 16px;
 
