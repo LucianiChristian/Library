@@ -114,11 +114,20 @@ function addBookCard(currentBook, index) {
 
         const bookAuthor = document.createElement('p');
         bookAuthor.classList.add('book-author');
-        bookAuthor.textContent = 'Author : ' + currentBook.author;
+        bookAuthor.textContent = currentBook.author;
 
         const bookPages = document.createElement('p');
         bookPages.classList.add('book-pages');
         bookPages.textContent = currentBook.pages + ' pages';
+
+        const bookReadStatus = document.createElement('p');
+        bookReadStatus.classList.add('book-read-status');
+        if(currentBook.readStatus === true) {
+            bookReadStatus.textContent = 'Completed'
+        }
+        else {
+            bookReadStatus.textContent = 'Incomplete'
+        }
 
         const readLabel = document.createElement('label');
         readLabel.classList.add('switch');
@@ -136,6 +145,7 @@ function addBookCard(currentBook, index) {
         topDiv.appendChild(deleteButton);
         bookCard.appendChild(bookAuthor);
         bookCard.appendChild(bookPages);
+        bookCard.appendChild(bookReadStatus);
         bookCard.appendChild(readLabel);
         readLabel.appendChild(readInput);
         readLabel.appendChild(readSpan);
